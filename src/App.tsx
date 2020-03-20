@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -5,23 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 
-export default function App() {
-  return (
-    <Router>
-      <div>
-        <h1>Crossfeed</h1>
+import { HomePage } from "pages";
+import "./styles.scss";
 
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
+const App: React.FC = () => (
+  <HomePage />
+);
 
-function Home() {
-  return <h2>Homepage</h2>;
-}
+export default App;
 
