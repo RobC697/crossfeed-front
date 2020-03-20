@@ -6,11 +6,11 @@ import {
   Route,
 } from "react-router-dom";
 
-import { HomePage } from "pages";
+import { Layout } from "pages";
 import "./styles.scss";
 
 const App: React.FC = () => (
-  <HomePage />
+  <Layout />
 );
 
 export default App;
