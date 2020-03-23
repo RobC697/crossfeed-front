@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import classes from "./Layout.module.css";
 import { Header, HeaderNavbar, OfficialSiteBanner } from "crossfeed-uswds";
-import { Dashboard, Vulnerabilities} from 'pages';
+import { Dashboard, Home, Vulnerabilities} from 'pages';
 
 
  
@@ -18,6 +18,10 @@ const Layout: React.FC = () => {
         <HeaderNavbar />
         
         <Switch>
+        <Route
+            path="/home"
+            component={Home}
+          />
         <Route
             path="/vulnerabilities"
             component={Vulnerabilities}

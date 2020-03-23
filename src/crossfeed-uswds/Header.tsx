@@ -20,7 +20,7 @@ export const HeaderNavbar: React.FC = ({ children }) => (
    <nav className={classNames("site-nav-secondary sticky", classes.miniNavContainer)}>
       <ul>
           <li className="usa-nav__submenu-item">
-        <a href="/">
+        <a href="/home">
           <span>
             Home
           </span>
