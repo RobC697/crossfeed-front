@@ -1,17 +1,17 @@
 import React, { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
-import classes from "./ExamplePage.module.css";
+import classes from "./Vulnerabilities.module.css";
 
 
-const ExamplePage: React.FC = () => {
+const Vulnerabilities: React.FC = () => {
     
   return (
     
     <div className={classes.root}>
-        <h1>This is an example page</h1>
+        <h1>This is an example page for vulns</h1>
     </div>
 
   );
 };
 
-export default ExamplePage;
+export default Vulnerabilities;
