@@ -3,12 +3,40 @@
     background-color: #122D5D;
     color: white;
 }
-.miniNavContainer {
-    max-width: none !important;
-    background-color: #D3D3D3;
-}
 
 .logo {
     height: 80px;
     width: 80px;
 }
+
+.miniNavContainer {
+	width: 100%;
+	float: left;
+	margin: 0 0 3em 0;
+	padding: 0;
+    list-style: none;   
+    padding-left: 33%;    
+}
+    
+.miniNavContainer li {
+    float: left;
+    list-style-type: none;
+ }
+
+.miniNavContainer li a {
+		display: block;
+		padding: 8px 15px;
+		text-decoration: none;
+		font-weight: bold;
+		color: #069;
+        border-right: 1px solid #ccc;
+        list-style-type: none; }
+
+.miniNavContainer li a {
+		display: block;
+		padding: 8px 15px;
+		text-decoration: none;
+		font-weight: bold;
+		color: #069;
+        border-right: 1px solid #ccc;
+        list-style-type: none; }

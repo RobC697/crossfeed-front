@@ -17,7 +17,7 @@ export const Header: React.FC = ({ children }) => (
 
 export const HeaderNavbar: React.FC = ({ children }) => (
   <div className={classes.root}>
-   <nav className="site-nav-secondary sticky">
+   <nav className={classNames("site-nav-secondary sticky", classes.miniNavContainer)}>
       <ul>
           <li className="usa-nav__submenu-item">
         <a href="/">
