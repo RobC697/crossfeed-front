@@ -1,12 +1,17 @@
 .navContainer {
     max-width: none !important;
     background-color: #122D5D;
-    color: white;
+}
+
+.navContainer h2 {
+	color: white;
+	position: relative;
+	left: -5%;
 }
 
 .logo {
     height: 80px;
-    width: 80px;
+    width: 350px;
 }
 
 .miniNavContainer {
