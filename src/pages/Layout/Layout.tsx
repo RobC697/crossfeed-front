@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import classes from "./Layout.module.css";
 import { Header, HeaderNavbar, OfficialSiteBanner } from "crossfeed-uswds";
-import { Dashboard, Home, Vulnerabilities} from 'pages';
+import { Alerts, Dashboard, Home, Scans, Logs, Settings, Vulnerabilities} from 'pages';
 
 
  
@@ -29,6 +29,22 @@ const Layout: React.FC = () => {
           <Route
             path="/dashboard"
             component={Dashboard}
+          />
+          <Route
+            path="/alerts"
+            component={Alerts}
+          />
+          <Route
+            path="/scans"
+            component={Scans}
+          />
+          <Route
+            path="/logs"
+            component={Logs}
+          />
+          <Route
+            path="/Settings"
+            component={Settings}
           />
         </Switch>       
     
