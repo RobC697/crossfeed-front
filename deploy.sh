@@ -23,9 +23,9 @@ runTerraform(){
 
 pushFrontendToECR(){
     cd crossfeed-web;
-    docker build -t solo-stage-frontend --build-arg API_DOMAIN=api.stage.solo.code.mil --build-arg AUTH_DOMAIN=auth.stage.solo.code.mil --build-arg API_PROTOCOL=https .;
-    docker tag solo-stage-frontend:latest 187588058266.dkr.ecr.us-gov-west-1.amazonaws.com/solo-stage-frontend:latest;
-    docker push 187588058266.dkr.ecr.us-gov-west-1.amazonaws.com/solo-stage-frontend:latest;
+    docker build -t crossfeed-stage-frontend;
+    docker tag crossfeed-stage-frontend:latest 321940898149.dkr.ecr.us-west-2.amazonaws.com/crossfeed_staging:latest;
+    docker push 321940898149.dkr.ecr.us-west-2.amazonaws.com/crossfeed_staging:latest;
     cd ..;
 }
 

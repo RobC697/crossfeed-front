@@ -45,40 +45,24 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: install psql CLI
-          command: sudo apt install -y postgresql-client || true
-      - run:
-          name: run sequalize migration
-          command: npx sequelize-cli db:migrate
+          name: install npm react 
+          command: npm install react-scripts@3.0.1 -g --silent
+      # - run:  ------Currently irelivent untill we integrate the sql db into frontend
+      #     name: install psql CLI
+      #     command: sudo apt install -y postgresql-client || true
+      # - run:
+      #     name: run sequalize migration
+      #     command: npx sequelize-cli db:migrate
       - run: # run tests
-          name: test code
-          command: npm test
-  # deploy_to_staging:
-  #   docker:
-  #     - image: circleci/node:13.8.0
-  #       environment:
-  #         Current_Branch: << pipeline.git.branch >>
-  #   steps:
-  #     - checkout
-  #     - add_ssh_keys:
-  #         fingerprints:
-  #           - "39:90:53:cb:f5:35:f5:b5:0e:78:17:ec:8f:69:e4:66"
-  #     - run:
-  #         name: checkout master #changed from master
-  #         command: git checkout master #changed from master
-  #     - run: #this step is possibly uneeded
-  #         name: git pull origin working Branch
-  #         command: git pull origin $Current_Branch #this will be the name of branch that is pushing
-  #     - run:
-  #         name: push it
-  #         command: git push
+          name: run server code
+          command: npm start
   deploy_to_aws:
     working_directory: ~/crossfeed
     docker:
       - image: circleci/python:3.8
         environment: 
-          AWS_ACCESS_KEY_ID: AKIAUV5JMIFS3DELFGZ7 #move these to circleci project variables
-          AWS_SECRET_ACCESS_KEY: 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 #move these to circleci project variables
+          AWS_ACCESS_KEY_ID:  #move these to circleci project variables
+          AWS_SECRET_ACCESS_KEY:  #move these to circleci project variables
     steps:
       - setup_remote_docker
       - checkout:
@@ -105,13 +89,6 @@ workflows:
           filters:
             branches:
               only: master #edit these based on when we want to require manual approval
-      # - deploy_to_staging:
-      #     requires:
-      #       - build
-      #     #  - hold
-      #     filters:
-      #       branches:
-      #         ignore: master
       - deploy_to_aws:
           requires:
             - build
