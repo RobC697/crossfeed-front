@@ -9,7 +9,7 @@ installTerraform(){
 configureAWS(){
     aws configure set aws_access_key_id ${AWS_ACCESS_KEY_ID};
     aws configure set aws_secret_access_key ${AWS_SECRET_ACCESS_KEY};
-    #$(aws ecr get-login --no-include-email --region us-west-2);  wait until aws ecr is configured
+    $(aws ecr get-login --no-include-email --region us-west-2);
 }
 
 runTerraform(){
@@ -22,8 +22,7 @@ runTerraform(){
 }
 
 pushFrontendToECR(){
-    cd crossfeed-web;
-    docker build -t crossfeed-stage-frontend;
+    docker build -t crossfeed-stage-frontend .;
     docker tag crossfeed-stage-frontend:latest 321940898149.dkr.ecr.us-west-2.amazonaws.com/crossfeed_staging:latest;
     docker push 321940898149.dkr.ecr.us-west-2.amazonaws.com/crossfeed_staging:latest;
     cd ..;

@@ -17,7 +17,8 @@ variable "az_count" {
 
 variable "app_image" {
   description = "Docker image to run in the ECS cluster"
-  default     = "crossfeed-stage-frontend"
+  default     = "321940898149.dkr.ecr.us-west-2.amazonaws.com/crossfeed_staging:latest"
+  //default     = "crossfeed-stage-frontend"
 }
 
 variable "app_port" {
@@ -27,7 +28,7 @@ variable "app_port" {
 
 variable "app_count" {
   description = "Number of docker containers to run"
-  default     = 2
+  default     = 1
 }
 
 variable "health_check_path" {

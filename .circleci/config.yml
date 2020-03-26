@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/crossfeed-web-chase
+    working_directory: ~/crossfeed-front
     docker:
       - image: circleci/node:13.8.0 # the primary container, where your job's commands are run
         environment:
@@ -57,7 +57,7 @@ jobs:
           name: run server code
           command: npm start
   deploy_to_aws:
-    working_directory: ~/crossfeed
+    working_directory: ~/crossfeed-front
     docker:
       - image: circleci/python:3.8
         environment: 
